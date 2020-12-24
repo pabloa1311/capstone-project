@@ -4,19 +4,25 @@ import Cart from "./pages/Cart.js"
 import Photos from "./pages/Photos.js"
 
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {    
   return (
       <div>
           <Header />
-          <h1>Home Page</h1>
+          <Switch>
+              <Route exact path="/">
+                  <Photos />
+              </Route>
+              <Route path="/cart">
+                  <Cart />
+              </Route>
+          </Switch>
+          
       </div>
   )
 }
 
-export default App;
+export default App
