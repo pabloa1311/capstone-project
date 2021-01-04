@@ -16,8 +16,10 @@ function useHover() {
         ref.current.addEventListener("mouseenter", enter)
         ref.current.addEventListener("mouseleave", leave)
         
-        return () => {
+        return () => {   
+            // eslint-disable-next-line 
             ref.current.removeEventListener("mouseenter", enter)
+            // eslint-disable-next-line
             ref.current.removeEventListener("mouseleave", leave)
         }
     }, [])
